@@ -12,15 +12,15 @@
     <!-- Navbar -->
     <nav>
         <ul>
-            <li><a href="{% url 'iam_users' %}">IAM Users</a></li>
-            <li><a href="{% url 'guardduty_findings' %}">GuardDuty Findings</a></li>
-            <li><a href="{% url 'kms_keys' %}">KMS Keys</a></li>
-            <li><a href="{% url 'cloudtrail_logs' %}">CloudTrail Logs</a></li>
             {% if user.is_authenticated %}
+                <li><a href="{% url 'iam_users' %}">IAM Users</a></li>
+                <li><a href="{% url 'kms_keys' %}">KMS Keys</a></li>
+                <li><a href="{% url 'guardduty_findings' %}">GuardDuty Findings</a></li>
+                <li><a href="{% url 'cloudtrail_logs' %}">CloudTrail Logs</a></li>
                 <li>
-                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
                         {% csrf_token %}
-                        <button type="submit" class="logout-link">Logout</button>
+                        <button type="submit">Logout</button>
                     </form>
                 </li>
             {% else %}
