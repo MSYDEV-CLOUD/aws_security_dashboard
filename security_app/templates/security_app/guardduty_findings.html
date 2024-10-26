@@ -1,0 +1,24 @@
+{% extends "security_app/base.html" %}
+
+{% block title %}GuardDuty Findings{% endblock %}
+
+{% block content %}
+<h1>GuardDuty Findings</h1>
+
+{% if findings %}
+    <table>
+        <tr>
+            <th>Finding ID</th><th>Severity</th><th>Description</th>
+        </tr>
+        {% for finding in findings %}
+        <tr>
+            <td>{{ finding.FindingId }}</td>
+            <td>{{ finding.Severity }}</td>
+            <td>{{ finding.Description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>{{ message }}</p>
+{% endif %}
+{% endblock %}

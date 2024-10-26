@@ -1,0 +1,19 @@
+{% extends "security_app/base.html" %}
+
+{% block title %}IAM Users{% endblock %}
+
+{% block content %}
+<h1>IAM Users</h1>
+<table>
+    <tr>
+        <th>Username</th><th>Created On</th><th>ARN</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.UserName }}</td>
+        <td>{{ user.CreateDate }}</td>
+        <td>{{ user.Arn }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

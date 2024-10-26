@@ -1,0 +1,17 @@
+{% extends "security_app/base.html" %}
+
+{% block title %}KMS Keys{% endblock %}
+
+{% block content %}
+<h1>KMS Keys</h1>
+<table>
+    <tr>
+        <th>Key ID</th>
+    </tr>
+    {% for key in keys %}
+    <tr>
+        <td>{{ key.KeyId }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

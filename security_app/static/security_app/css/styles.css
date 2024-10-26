@@ -1,0 +1,83 @@
+/* Base body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Navigation bar styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #333;
+    overflow: hidden;
+    margin: 0;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Logout button styling to match navigation links */
+nav ul li form button {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: none; /* Matches link style */
+    cursor: pointer;
+    padding: 15px 20px; /* Same padding as links */
+    font: inherit;  /* Inherits font properties to match */
+}
+
+nav ul li form button:hover {
+    background-color: #555; /* Matches link hover effect */
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,42 @@
+{% load static %}
+<!-- security_app/templates/security_app/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AWS Security Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'security_app/css/styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'iam_users' %}">IAM Users</a></li>
+            <li><a href="{% url 'guardduty_findings' %}">GuardDuty Findings</a></li>
+            <li><a href="{% url 'kms_keys' %}">KMS Keys</a></li>
+            <li><a href="{% url 'cloudtrail_logs' %}">CloudTrail Logs</a></li>
+            {% if user.is_authenticated %}
+                <li>
+                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-link">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ND AWS Security Dashboard DEMO</p>
+    </footer>
+</body>
+</html>

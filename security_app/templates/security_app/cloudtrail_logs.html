@@ -1,0 +1,19 @@
+{% extends "security_app/base.html" %}
+
+{% block title %}CloudTrail Logs{% endblock %}
+
+{% block content %}
+<h1>CloudTrail Logs</h1>
+<table>
+    <tr>
+        <th>Event ID</th><th>Event Name</th><th>Event Time</th>
+    </tr>
+    {% for event in events %}
+    <tr>
+        <td>{{ event.EventId }}</td>
+        <td>{{ event.EventName }}</td>
+        <td>{{ event.EventTime }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
